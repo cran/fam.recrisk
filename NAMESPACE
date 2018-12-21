@@ -1,0 +1,9 @@
+import(stats)
+import(utils)
+export(fam.recrisk,
+       recrisk.ratio,
+       recrisk.single.ascertain,
+       recrisk.mixture)
+#S3method(print, fam.recrisk)
+#S3method(summary, fam.recrisk)
+

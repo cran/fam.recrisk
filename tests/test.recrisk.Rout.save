@@ -1,0 +1,100 @@
+
+R version 3.4.2 (2017-09-28) -- "Short Summer"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> 
+> ## test script for fam.recrisk
+> 
+> ## definition of arguments:
+> 
+> ## s  vector of sizes of families
+> ## a  vector of number of affected members per family
+> ## k  number of affecteds to condition on, the ascertainment criterion (e.g., at least k affecteds)
+> 
+> ## for recrisk.ration, the argument fit is the list object returned from fam.recrisk
+> 
+> ## example usage of functions
+> 
+> require(fam.recrisk)
+Loading required package: fam.recrisk
+> 
+> s <- c(4,  8,  6,  6,  10, 8,  7,  8,  5,  6,  10, 4,  4,  8,  6,  8,  4,  5,  9, 
++        9,  5,  4,  4,  7,  3,  3,  9,  5,  3,  3,  4,  6,  8,  3,  5,  8,  6,  8, 9,  3)
+> 
+> a <- c(3, 4, 2, 5, 4, 5, 3, 4, 3, 3, 8, 2, 0, 3, 4, 5, 2, 3, 4, 2, 1, 1,
++        1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 1, 0, 2, 3, 0)
+> 
+> set.seed(10000)
+> fam.recrisk(s,a,1)
+$phat
+[1] 0.4457364
+
+$prev
+[1] 0.3443983
+
+$var.phat
+[1] 0.003223832
+
+$var.prev
+[1] 0.00163651
+
+$covar
+[1] 0.001457824
+
+> 
+> recrisk.single.ascertain(s,a)
+$phat
+[1] 0.3333333
+
+$var.phat
+[1] 0.002049146
+
+> 
+> recrisk.mixture(s,a,k=1)
+$recrisk.high
+[1] 0.675232
+
+$recrisk.low
+[1] 0.3769912
+
+$prob.high.group
+[1] 0.1302412
+
+$prob.fam.high
+ [1] 0.278108495 0.100100205 0.032357204 0.575621798 0.029741705 0.276512421
+ [7] 0.057712250 0.100100205 0.175353217 0.103054023 0.810325126 0.100819900
+[13] 0.031358910 0.283034638 0.276512421 0.100819900 0.175353217 0.055256478
+[19] 0.004929893 0.017693241 0.031601728 0.031601728 0.005161212 0.054122939
+[25] 0.031601728 0.009334315 0.002734785 0.009334315 0.016737705
+
+$iter
+[1] 311
+
+> 
+> fit <- fam.recrisk(s,a,1)
+> 
+> recrisk.ratio(fit)
+$rr
+[1] 1.28868
+
+$var.rr
+[1] 0.01831824
+
+> 
+> 
+> proc.time()
+   user  system elapsed 
+  0.381   0.062   0.551 

@@ -1,0 +1,13 @@
+c155a62f9b8522b8c8abda4ae6d54d10 *DESCRIPTION
+c1069e1cba9696d49076e773685c5d39 *NAMESPACE
+141d8bdb2736c6199183610cea5bad89 *R/fam.recrisk.R
+43e39bb5617d04200003d70758fbe5fc *R/recrisk.R
+d368405f1c604912f51ba286eed9944a *inst/GPL.txt
+7e16f17cc8fc46f0cc7fc591c2358cb0 *inst/LICENSE.note
+57f55a37d869ec17216c7b12ea48c863 *inst/NEWS.Rd
+2272a3ab5d50402fd067a26f619838f5 *man/fam.recrisk.Rd
+d1371280449a3e9f08524fc201d530c9 *man/recrisk.mixture.Rd
+2a9f92a0def85b9d3fe5ce6a41d50d02 *man/recrisk.ratio.Rd
+66eb3014cc0c8c0dabecc67a1e32d593 *man/recrisk.single.ascertain.Rd
+d7090fac12040acfda744d52b5a65f5f *tests/test.recrisk.R
+93cbf9519ef9d3ecf6e001a6b9613bba *tests/test.recrisk.Rout.save
